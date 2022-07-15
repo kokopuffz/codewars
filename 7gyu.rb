@@ -17,4 +17,34 @@ class SevenGyu
     # capitalize, delete all space, split by char, rejoin by double space
     string.upcase.delete(" ").split("").join("  ")
   end
+
+  def self.numbers_with_digit_inside(x, d)
+  #your code here
+  # get all numbers separated 
+  # check each set of numbers find and make new 
+  # first is count of numbers in this array
+  # solution = [count_of_d_inside, sum_of_nums, mult_of_nums]
+    nums = []
+    range_of_nums = (1..x).to_a
+    solution = []
+    
+    range_of_nums.each do |i|
+      i = i.to_s.split('')
+      if i.include?(d.to_s)
+        nums << i.join('').to_i
+      end
+    end
+    # p "nums"
+    # p nums
+    
+    if nums.empty?
+      return [0, 0, 0]
+    else
+      solution << nums.count
+      solution << nums.sum
+      solution << nums.inject(:*)
+    end
+    
+    solution
+  end 
 end

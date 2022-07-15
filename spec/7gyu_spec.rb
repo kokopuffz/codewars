@@ -39,4 +39,22 @@ RSpec.describe SevenGyu, "#solve" do
     expect(answer1).to eq("L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S")
     expect(answer2).to eq("W  H  Y  I  S  N  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?")
   end
+
+  it "should return [0, 0, 0] if array is empty" do 
+    answer = SevenGyu.numbers_with_digit_inside(5, 6)
+
+    expect(answer).to eq([0, 0, 0])
+  end
+
+  it "should pass numbers with this digit inside test" do
+    answer1 = SevenGyu.numbers_with_digit_inside(7, 6)
+    answer2 = SevenGyu.numbers_with_digit_inside(11, 1)
+    answer3 = SevenGyu.numbers_with_digit_inside(20, 0)
+    answer4 = SevenGyu.numbers_with_digit_inside(44, 4)
+
+    expect(answer1).to eq([1, 6, 6])
+    expect(answer2).to eq([3, 22, 110])
+    expect(answer3).to eq([2, 30, 200])
+    expect(answer4).to eq([9, 286, 5955146588160])
+  end
 end
