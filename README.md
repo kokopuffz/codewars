@@ -1,4 +1,4 @@
-# Codewar practices
+# Codewar practices + pragmatic programmer testing
 
 just practicing algos from codewars.com with addition to rspec testing
 
