@@ -51,4 +51,24 @@ class SevenGyu
     
   #   solution
   # end 
+
+  def self.solution(digits)
+    # iterate through each number
+    # have a something that holds the highest so far
+    # replace if it's higher
+    current_highest = ""
+    current_nums = ""
+    x = 0
+    while x <= digits.length-5 do
+      current_nums = digits[x..x+4]
+      if current_nums.to_i < current_highest.to_i
+        current_highest = current_highest
+      else
+        current_highest = current_nums
+      end 
+      x += 1
+    end
+      
+    current_highest.to_i 
+  end
 end
